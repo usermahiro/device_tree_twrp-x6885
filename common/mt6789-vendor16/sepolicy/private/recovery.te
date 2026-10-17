@@ -126,6 +126,9 @@ recovery_only(`
   allow hal_bootctl_default self:global_capability_class_set sys_rawio;
   allow recovery mtk_recovery_fstab_file:file create_file_perms;
   allow recovery mtk_recovery_fstab_file:lnk_file r_file_perms;
+  # External SD (exfat): recovery needs search/mounton on the mounted root.
+  allow recovery exfat:dir { create_dir_perms mounton };
+  allow recovery exfat:file create_file_perms;
   allow init mtk_recovery_fstab_file:lnk_file create_file_perms;
   allowxperm recovery functionfs:file ioctl { 0x6781 };
   r_dir_file(recovery, pstorefs)
