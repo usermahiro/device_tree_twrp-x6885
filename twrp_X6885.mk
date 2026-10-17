@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Alias: `lunch twrp_X6885-*` tetap jalan. Isi lengkap ada di fox_X6885.mk.
 $(call inherit-product, device/infinix/X6885/fox_X6885.mk)
 
 # Product Specifics

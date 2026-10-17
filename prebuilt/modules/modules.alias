@@ -172,12 +172,6 @@ alias i2c:hl7139a tc_hl7139a
 alias of:N*T*Ctc_audio tc_audio
 alias of:N*T*Ctc_audioC* tc_audio
 alias mmc:block tran_mmc_block
-alias of:N*T*Crichtek,rt1711h tcpc_rt1711h
-alias of:N*T*Crichtek,rt1711hC* tcpc_rt1711h
-alias of:N*T*Crichtek,rt1715 tcpc_rt1711h
-alias of:N*T*Crichtek,rt1715C* tcpc_rt1711h
-alias of:N*T*Crichtek,rt1716 tcpc_rt1711h
-alias of:N*T*Crichtek,rt1716C* tcpc_rt1711h
 alias of:N*T*Cmediatek,mt2712-m4u mtk_iommu
 alias of:N*T*Cmediatek,mt2712-m4uC* mtk_iommu
 alias of:N*T*Cmediatek,mt6761-m4u mtk_iommu
@@ -326,6 +320,8 @@ alias of:N*T*Cmediatek,mt6881-disp-pwm pwm_mtk_disp
 alias of:N*T*Cmediatek,mt6881-disp-pwmC* pwm_mtk_disp
 alias of:N*T*Ctranssion,_usb_control tran_usb_ctrl
 alias of:N*T*Ctranssion,_usb_controlC* tran_usb_ctrl
+alias of:N*T*Ctranssion,port_corrosion tc_port_corrosion_prevention
+alias of:N*T*Ctranssion,port_corrosionC* tc_port_corrosion_prevention
 alias of:N*T*Cmediatek,mt8183-dvfsrc mtk_dvfsrc_regulator
 alias of:N*T*Cmediatek,mt8183-dvfsrcC* mtk_dvfsrc_regulator
 alias of:N*T*Cmediatek,mt8192-dvfsrc mtk_dvfsrc_regulator
@@ -432,8 +428,6 @@ alias of:N*T*Ctranssion,hvdcp20_charger tc_hvdcp20_algo
 alias of:N*T*Ctranssion,hvdcp20_chargerC* tc_hvdcp20_algo
 alias of:N*T*Csyscon-reboot-mode syscon_reboot_mode
 alias of:N*T*Csyscon-reboot-modeC* syscon_reboot_mode
-alias of:N*T*Cnxp,pn544 nfc_i2c
-alias of:N*T*Cnxp,pn544C* nfc_i2c
 alias of:N*T*Cmediatek,mt6357-lbat_service pmic_lbat_service
 alias of:N*T*Cmediatek,mt6357-lbat_serviceC* pmic_lbat_service
 alias of:N*T*Cmediatek,mt6358-lbat_service pmic_lbat_service
@@ -1562,6 +1556,8 @@ alias of:N*T*Cnt37703a,fhdp,dsi,vdo,dsc,tm,tm,120hz,cl6 nt37703a_fhdp_dsi_vdo_ds
 alias of:N*T*Cnt37703a,fhdp,dsi,vdo,dsc,tm,tm,120hz,cl6C* nt37703a_fhdp_dsi_vdo_dsc_tm_tm_120hz_cl6
 alias of:N*T*Ctc_gauge tc_gauge
 alias of:N*T*Ctc_gaugeC* tc_gauge
+alias of:N*T*Ctranssion,phy_det tc_phy_insert_det
+alias of:N*T*Ctranssion,phy_detC* tc_phy_insert_det
 alias of:N*T*Cmediatek,mt6577-uart 8250_mtk
 alias of:N*T*Cmediatek,mt6577-uartC* 8250_mtk
 alias of:N*T*Cmediatek,mt6985-uart 8250_mtk
@@ -2039,6 +2035,7 @@ alias of:N*T*Cmediatek,mt6881-dvfsrc mtk_emi
 alias of:N*T*Cmediatek,mt6881-dvfsrcC* mtk_emi
 alias of:N*T*Cvtdr6126a,fhdp,dsi,vdo,dsc,tm,144hz,cn5c vtdr6126a_fhdp_dsi_vdo_dsc_tm_144hz_cn5c
 alias of:N*T*Cvtdr6126a,fhdp,dsi,vdo,dsc,tm,144hz,cn5cC* vtdr6126a_fhdp_dsi_vdo_dsc_tm_144hz_cn5c
+alias i2c:upm7610 tcpc_upm7610
 alias of:N*T*Cmediatek,mt6357-auxadc mt635x_auxadc
 alias of:N*T*Cmediatek,mt6357-auxadcC* mt635x_auxadc
 alias of:N*T*Cmediatek,mt6358-auxadc mt635x_auxadc

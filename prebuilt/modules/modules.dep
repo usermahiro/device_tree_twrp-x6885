@@ -33,7 +33,6 @@
 /lib/modules/tc_audio.ko: /lib/modules/tc_common_class.ko
 /lib/modules/tran_mmc_block.ko: /lib/modules/tran_block.ko /lib/modules/tran-ufshcd-core.ko /lib/modules/tran_scsi_mod.ko /lib/modules/tran_sd_mod.ko
 /lib/modules/tc_charger_class.ko:
-/lib/modules/tcpc_rt1711h.ko: /lib/modules/tcpc_class.ko /lib/modules/tc_misc_intf.ko /lib/modules/tc_adapter_class.ko /lib/modules/tc_charger_class.ko /lib/modules/tc_algorithm_class.ko /lib/modules/tc_common_class.ko /lib/modules/bootprof.ko /lib/modules/pd_dbg_info.ko
 /lib/modules/tran_rhi.ko:
 /lib/modules/isee.ko: /lib/modules/bootprof.ko
 /lib/modules/device-apc-mt6789.ko: /lib/modules/device-apc-common.ko /lib/modules/log_store.ko /lib/modules/mrdump.ko /lib/modules/aee_aed.ko
@@ -51,6 +50,7 @@
 /lib/modules/tran_usb_ctrl.ko: /lib/modules/tc_ta_class.ko /lib/modules/tc_charger_framework.ko /lib/modules/tc_tcpc.ko /lib/modules/tcpc_class.ko /lib/modules/tc_misc_intf.ko /lib/modules/tc_adapter_class.ko /lib/modules/tc_charger_class.ko /lib/modules/tc_algorithm_class.ko /lib/modules/tc_common_class.ko /lib/modules/bootprof.ko /lib/modules/pd_dbg_info.ko /lib/modules/transsion_tranlog.ko
 /lib/modules/mtk-mmc-dbg.ko: /lib/modules/tran_mmc_block.ko /lib/modules/tran_block.ko /lib/modules/tran-ufshcd-core.ko /lib/modules/tran_scsi_mod.ko /lib/modules/tran_sd_mod.ko /lib/modules/blocktag.ko /lib/modules/pinctrl-mtk-common-v2_debug.ko /lib/modules/pinctrl-mtk-v2.ko /lib/modules/mrdump.ko
 /lib/modules/mtk-scpsys-bringup.ko:
+/lib/modules/tc_port_corrosion_prevention.ko: /lib/modules/tc_tcpc.ko /lib/modules/tcpc_class.ko /lib/modules/tc_misc_intf.ko /lib/modules/tc_adapter_class.ko /lib/modules/tc_charger_class.ko /lib/modules/tc_algorithm_class.ko /lib/modules/tc_common_class.ko /lib/modules/bootprof.ko /lib/modules/pd_dbg_info.ko
 /lib/modules/mtk-dvfsrc-helper.ko: /lib/modules/mtk_dramc.ko /lib/modules/mtk-mmdvfs-debug.ko /lib/modules/mtk-dvfsrc.ko /lib/modules/aee_aed.ko
 /lib/modules/clk-chk-mt6789.ko: /lib/modules/clk-common.ko /lib/modules/aee_aed.ko
 /lib/modules/clk-mt6789-img.ko: /lib/modules/clk-common.ko /lib/modules/aee_aed.ko
@@ -63,7 +63,6 @@
 /lib/modules/mmqos_wrapper.ko: /lib/modules/mmqos-common.ko /lib/modules/mtk-mm-monitor-controller.ko /lib/modules/mm-monitor-platform-mt6789.ko /lib/modules/mtk-mmdvfs.ko /lib/modules/mmprofile.ko /lib/modules/mtk-icc-core.ko /lib/modules/mtk_dramc.ko /lib/modules/mtk-mmdvfs-debug.ko /lib/modules/mtk-dvfsrc.ko /lib/modules/mtk-smi-dbg.ko /lib/modules/emi.ko /lib/modules/emi-mpu.ko /lib/modules/mtk-smi.ko /lib/modules/log_store.ko /lib/modules/mrdump.ko /lib/modules/clk-common.ko /lib/modules/aee_aed.ko
 /lib/modules/industrialio-triggered-buffer.ko: /lib/modules/kfifo_buf.ko
 /lib/modules/tran-ufshcd-pltfrm.ko: /lib/modules/tran-ufshcd-core.ko /lib/modules/tran_scsi_mod.ko /lib/modules/tran_sd_mod.ko
-/lib/modules/tran_soft_restart.ko: /lib/modules/mtk-pmic-keys.ko /lib/modules/transsion_tranlog.ko
 /lib/modules/mt6375-adc.ko: /lib/modules/industrialio-triggered-buffer.ko /lib/modules/kfifo_buf.ko
 /lib/modules/mt6789_dcm.ko: /lib/modules/mtk_dcm.ko
 /lib/modules/tc_lcd_notify.ko: /lib/modules/mtk_disp_notify.ko /lib/modules/tc_common_class.ko
@@ -100,7 +99,6 @@
 /lib/modules/pidmap.ko:
 /lib/modules/tc_hvdcp20_algo.ko: /lib/modules/tc_charger_framework.ko /lib/modules/tc_tcpc.ko /lib/modules/tcpc_class.ko /lib/modules/tc_misc_intf.ko /lib/modules/tc_adapter_class.ko /lib/modules/tc_charger_class.ko /lib/modules/tc_algorithm_class.ko /lib/modules/tc_common_class.ko /lib/modules/bootprof.ko /lib/modules/pd_dbg_info.ko /lib/modules/transsion_tranlog.ko
 /lib/modules/syscon-reboot-mode.ko: /lib/modules/reboot-mode.ko
-/lib/modules/nfc_i2c.ko:
 /lib/modules/mtk-mm-monitor-controller.ko: /lib/modules/mm-monitor-platform-mt6789.ko /lib/modules/mtk-smi.ko /lib/modules/clk-common.ko /lib/modules/aee_aed.ko
 /lib/modules/pmic_lbat_service.ko:
 /lib/modules/mtk-mmdebug-vcp-stub.ko:
@@ -136,6 +134,7 @@
 /lib/modules/regulator-vibrator.ko:
 /lib/modules/tran_sd_mod.ko:
 /lib/modules/mtk-icc-core.ko:
+/lib/modules/tms_device_modules.ko:
 /lib/modules/transsion_tranlog.ko:
 /lib/modules/nvmem_mtk-devinfo.ko:
 /lib/modules/tc_misc_intf.ko: /lib/modules/tc_adapter_class.ko /lib/modules/tc_charger_class.ko /lib/modules/tc_algorithm_class.ko /lib/modules/tc_common_class.ko /lib/modules/bootprof.ko
@@ -178,6 +177,7 @@
 /lib/modules/irq-dbg.ko:
 /lib/modules/tc_gauge.ko: /lib/modules/tc_auto_test.ko /lib/modules/tc_misc_intf.ko /lib/modules/tc_adapter_class.ko /lib/modules/tc_charger_class.ko /lib/modules/tc_algorithm_class.ko /lib/modules/tc_common_class.ko /lib/modules/bootprof.ko
 /lib/modules/clk-fmeter-mt6789.ko: /lib/modules/clk-common.ko /lib/modules/aee_aed.ko
+/lib/modules/tc_phy_insert_det.ko: /lib/modules/tc_misc_intf.ko /lib/modules/tc_adapter_class.ko /lib/modules/tc_charger_class.ko /lib/modules/tc_algorithm_class.ko /lib/modules/tc_common_class.ko /lib/modules/bootprof.ko
 /lib/modules/mtk-dvfsrc-devfreq.ko: /lib/modules/mtk-dvfsrc.ko
 /lib/modules/pd-chk-mt6789.ko: /lib/modules/clk-chk-mt6789.ko /lib/modules/clk-common.ko /lib/modules/aee_aed.ko
 /lib/modules/8250_mtk.ko: /lib/modules/mtk-uart-apdma.ko /lib/modules/irq-dbg.ko
@@ -218,6 +218,7 @@
 /lib/modules/mrdump.ko:
 /lib/modules/vtdr6126a_fhdp_dsi_vdo_dsc_tm_144hz_cn5c.ko: /lib/modules/mtk-cmdq-drv-ext.ko /lib/modules/irq-dbg.ko /lib/modules/mmprofile.ko /lib/modules/iommu_debug.ko /lib/modules/mtk-smi-dbg.ko /lib/modules/emi.ko /lib/modules/emi-mpu.ko /lib/modules/mtk-smi.ko /lib/modules/device-apc-common.ko /lib/modules/log_store.ko /lib/modules/mrdump.ko /lib/modules/mtk_panel_ext.ko /lib/modules/clk-common.ko /lib/modules/aee_aed.ko
 /lib/modules/blocktag.ko: /lib/modules/mrdump.ko
+/lib/modules/tcpc_upm7610.ko: /lib/modules/tcpc_class.ko /lib/modules/tc_misc_intf.ko /lib/modules/tc_adapter_class.ko /lib/modules/tc_charger_class.ko /lib/modules/tc_algorithm_class.ko /lib/modules/tc_common_class.ko /lib/modules/bootprof.ko /lib/modules/pd_dbg_info.ko
 /lib/modules/mediatek-cpufreq-hw.ko:
 /lib/modules/mt635x-auxadc.ko:
 /lib/modules/tran_fp.ko: /lib/modules/spi-mt65xx.ko /lib/modules/irq-dbg.ko /lib/modules/mtk_disp_notify.ko /lib/modules/transsion_tranlog.ko

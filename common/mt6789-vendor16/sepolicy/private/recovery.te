@@ -56,6 +56,11 @@ recovery_only(`
 
   # Vendor battery nodes also appear under MTK-specific sysfs paths.
   r_dir_file(hal_health_default, sysfs)
+  
+  # recovery torch_level
+  allow recovery sysfs_leds:dir r_dir_perms;
+  allow recovery sysfs_leds:file rw_file_perms;
+  allow recovery sysfs_leds:lnk_file r_file_perms;
 
   # AIDL/HIDL services and keystore run in their standard domains.
   binder_use(recovery)
@@ -115,8 +120,7 @@ recovery_only(`
   allow init mtk_recovery_cgroup_desc_file:file r_file_perms;
   # Writable /etc fstab has its own label; boot HAL does not read arbitrary tmpfs.
   allow hal_bootctl_default mtk_recovery_fstab_file:file r_file_perms;
-  allow recovery exfat:dir { create_dir_perms mounton };
-  allow recovery exfat:file create_file_perms;
+  # Set Boot Slot: MTK boot HAL (libmtk_bsg) writes the UFS boot LU attribute via SG_IO.
   allow hal_bootctl_default mtk_recovery_ufs_bsg_device:chr_file { open read write getattr ioctl };
   allowxperm hal_bootctl_default mtk_recovery_ufs_bsg_device:chr_file ioctl { 0x2285 };
   allow hal_bootctl_default self:global_capability_class_set sys_rawio;
