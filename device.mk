@@ -44,12 +44,6 @@ AB_OTA_POSTINSTALL_CONFIG += \
     POSTINSTALL_OPTIONAL_system=true
 
 AB_OTA_POSTINSTALL_CONFIG += \
-    RUN_POSTINSTALL_system=true \
-    POSTINSTALL_PATH_system=system/bin/mtk_plpath_utils \
-    FILESYSTEM_TYPE_system=ext4 \
-    POSTINSTALL_OPTIONAL_system=true
-
-AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_vendor=true \
     POSTINSTALL_PATH_vendor=bin/checkpoint_gc \
     FILESYSTEM_TYPE_vendor=ext4 \
@@ -106,13 +100,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.security.keymint-V3-ndk
 
-PRODUCT_PACKAGES_DEBUG += \
-    bootctrl
-
-PRODUCT_PACKAGES += \
-    bootctrl.mt6789 \
-    bootctrl.mt6789.recovery
-
 # create_pl_dev
 PRODUCT_PACKAGES += \
     create_pl_dev \
@@ -127,6 +114,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
-MTK_VENDOR16_RAMDISK_MODULES_DIR := $(DEVICE_PATH)/prebuilt/modules
-MTK_VENDOR16_RAMDISK_FSTABS := $(DEVICE_PATH)/recovery/root/first_stage_ramdisk/fstab.mt6789
-$(call inherit-product, $(DEVICE_PATH)/common/mt6789-vendor16/vendor_ramdisk.mk)
+# Vendor ramdisk (first stage): kernel-matched modules with their original
+# load metadata, plus the stock first-stage fstab. Recovery-only touch modules
+# stay in recovery/root/lib/modules/touch.
+PRODUCT_PACKAGES += init_first_stage
+
+MTK_VENDOR16_RAMDISK_MODULE_FILES := \
+    $(wildcard $(DEVICE_PATH)/prebuilt/modules/*.ko) \
+    $(wildcard $(DEVICE_PATH)/prebuilt/modules/modules.*)
+PRODUCT_COPY_FILES += $(foreach file,$(MTK_VENDOR16_RAMDISK_MODULE_FILES), \
+    $(file):$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/modules/$(notdir $(file)))
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/recovery/root/first_stage_ramdisk/fstab.mt6789:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.mt6789

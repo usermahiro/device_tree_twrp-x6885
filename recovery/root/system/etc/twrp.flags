@@ -36,6 +36,7 @@
 /tee2				emmc		/dev/block/by-name/tee2											flags=display="TEE 2"
 
 # Removable Storage
+/external_sd		auto		/dev/block/mmcblk0p1		/dev/block/mmcblk1p1		flags=display="Micro SD Card";storage;wipeingui;removable;backup=0
 /usb_otg			auto		/dev/block/sdd1				/dev/block/sdd						flags=display="USB OTG";storage;wipeingui;removable;backup=0
 
 # Flashable logical partitions
